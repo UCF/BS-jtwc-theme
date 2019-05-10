@@ -59,8 +59,6 @@ function google_head() {
 
 /**
  * Is login or register page
- * @author umbrovskis
- * @authorlink http://umbrovskis.com 
  */
 function smc_is_login_page() {
     return in_array($GLOBALS['pagenow'], array('wp-login.php', 'wp-register.php'));
@@ -289,7 +287,7 @@ function _contactsubmit() {
 		
 	} else {
 			
-		$to = 'jeremy@wearespry.com';
+		$to = '';
 
 		$subject = "John T. Washington Center - $form_label Form Submission";
 		$message = "Someone has contacted you from a form on your site.<br /><br />";
@@ -300,7 +298,7 @@ function _contactsubmit() {
 			$message .= $form_field_name . ': ' . stripslashes($v) . '<br />';
 		}
 
-		$headers = "From: no-reply@uproarpr.com\r\n";
+		$headers = "From: \r\n";
 		$headers .= "MIME-Version: 1.0\r\n";
 		$headers .= "Content-Type: text/html; charset=ISO-8859-1\r\n";
 		$mail = mail($to, $subject, $message, $headers);
